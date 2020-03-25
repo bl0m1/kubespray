@@ -46,7 +46,7 @@ loadbalancer_apiserver_healthcheck_port: 8081
 #   - 8.8.8.8
 #   - 8.8.4.4
 
-# dns_serach_domain: 
+# dns_search_domain: 
 #  - openstacklocal
 
 ## There are some changes specific to the cloud providers
