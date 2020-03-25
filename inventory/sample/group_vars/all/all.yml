@@ -46,6 +46,9 @@ loadbalancer_apiserver_healthcheck_port: 8081
 #   - 8.8.8.8
 #   - 8.8.4.4
 
+# dns_serach_domain: 
+#  - openstacklocal
+
 ## There are some changes specific to the cloud providers
 ## for instance we need to encapsulate packets with some network plugins
 ## If set the possible values are either 'gce', 'aws', 'azure', 'openstack', 'vsphere', 'oci', or 'external'

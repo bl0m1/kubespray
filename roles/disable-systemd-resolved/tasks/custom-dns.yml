@@ -1,0 +1,26 @@
+---
+- name: Ensure that services are not running
+  service: 
+    name: systemd-resolved
+    state: stopped
+    enabled: no
+    masked: no
+
+- name: Stat resolv.conf
+  stat:
+    path: /etc/resolv.conf
+  register: sym
+
+- name: Remove /etc/resolv.conf if symlink
+  file:
+    path: /etc/resolv.conf
+    state: absent
+  when: sym.stat.islink is defined and sym.stat.islnk
+
+- name: write custom /etc/resolv.conf
+  template:
+    src: resolv.conf.j2
+    dest: /etc/resolv.conf
+    owner: root
+    group: root
+    mode: '0744'
