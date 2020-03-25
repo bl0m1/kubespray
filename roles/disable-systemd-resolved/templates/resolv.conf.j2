@@ -5,6 +5,6 @@ domain {{dns_domain}}
 {% for nameserver in upstream_dns_servers %}
 nameserver {{nameserver}}
 {% endfor %}
-{% if dns_searchs is defined %}
+{% if dns_search_domain is defined %}
 search {% for search_domain in dns_search_domain %}{{search_domain}} {% endfor %}
 {% endif %}
